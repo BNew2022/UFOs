@@ -5,20 +5,40 @@ var tbody = d3.select("tbody");
 
 fuction buildTable(data){
   // First, clear out any existing data
-    tbody.html("");
-}
-  // Next, loop through each object in the data
+tbody.html("");
+
+// Next, loop through each object in the data
   // and append a row and cells for each value in the row
 data.forEach((dataRow) => {
     // Append a row to the table body
-
-
+    let row = tbody.append("tr");
     // Loop through each field in the dataRow and add
     // each value as a table cell (td)
-    let row = tbody.append("tr");
-    Object.values(dataRow).forEach((val) =>{
+    Object.values(dataRow).forEach((val) => {
         let cell = row.append("td");
         cell.text(val);
     }
-   ;)
+   );
 });
+}
+function handleClick(){
+      // Grab the datetime value from the filter
+    let date = d3.select("#datetime").property("value");
+    let filterData = tableData;
+
+   // Check to see if a date was entered and filter the
+  // data using that date.
+if (date) {
+    // Apply `filter` to the table data to only keep the
+    // rows where the `datetime` value matches the filter val
+    filteredData = filteredData.filter(row => row.datetime === date);
+};
+   // Rebuild the table using the filtered data
+  // @NOTE: If no date was entered, then filteredData will
+  // just be the original tableData.
+buildTable(filteredData);
+};
+
+d3.selectAll("#filter-btn").on("click", handleClick);
+
+buildTable(tableData);
