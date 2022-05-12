@@ -3,7 +3,7 @@ const tableData = data;
 // reference the HTML table using D3
 var tbody = d3.select("tbody");
 
-fuction buildTable(data){
+function buildTable(data){
   // First, clear out any existing data
 tbody.html("");
 
@@ -24,7 +24,7 @@ data.forEach((dataRow) => {
 function handleClick(){
       // Grab the datetime value from the filter
     let date = d3.select("#datetime").property("value");
-    let filterData = tableData;
+    let filteredData = tableData;
 
    // Check to see if a date was entered and filter the
   // data using that date.
