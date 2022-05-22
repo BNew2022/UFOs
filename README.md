@@ -1,7 +1,7 @@
 # UFOs
 
 ## Overview
-The purpose of this analysis is to build a website using HTML, JavaScript that allows users to search UFO sighting data based on date, location and shape.  We will customize the website using Bootstrap and use the D3 JS library to add functionality.
+The purpose of this analysis is to build a website using HTML and JavaScript that allows users to search UFO sighting data based on date, location and shape.  We will customize the website using Bootstrap and use the D3 JS library to add functionality.
 
 # Results
 The website we built uses drop down menus to allow users to filter results using the following criteria:
